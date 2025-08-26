@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sample-webapp
-          image: your-dockerhub-username/sample-webapp:latest
+          image: aman65f/sample-webapp:latest
           ports:
             - containerPort: 3000
 ---
