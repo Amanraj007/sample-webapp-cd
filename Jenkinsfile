@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB = 'your-dockerhub-username'
+        DOCKER_HUB = 'aman65f'
         APP_NAME = 'sample-webapp'
     }
 
@@ -29,4 +29,3 @@ pipeline {
         }
     }
 }
-
