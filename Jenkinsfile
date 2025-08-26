@@ -10,6 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Amanraj007/sample-webapp-cd.git'
+                 credentialsId: 'github-creds'
             }
         }
 
