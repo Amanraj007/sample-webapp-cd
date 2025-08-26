@@ -15,10 +15,6 @@ pipeline {
                     credentialsId: 'github-creds'
                 )
             }
-        }
-    }
-}
-/*
 
         stage('Build Docker Image') {
             steps {
@@ -36,4 +32,3 @@ pipeline {
         }
     }
 }
-*/
