@@ -9,10 +9,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Amanraj007/sample-webapp-cd.git'
-                 credentialsId: 'github-creds'
+                git(
+                    url: 'https://github.com/Amanraj007/sample-webapp-cd.git',
+                    branch: 'main',
+                    credentialsId: 'github-creds'
+                )
             }
         }
+    }
+}
+/*
 
         stage('Build Docker Image') {
             steps {
@@ -30,3 +36,4 @@ pipeline {
         }
     }
 }
+*/
