@@ -15,9 +15,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh "docker build -t $DOCKER_HUB/$APP_NAME:latest ."
-                }
+                sh "docker build -t $DOCKER_HUB/$APP_NAME:latest ."
             }
         }
 
@@ -26,14 +24,6 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh "echo $PASS | docker login -u $USER --password-stdin"
                     sh "docker push $DOCKER_HUB/$APP_NAME:latest"
-                }
-            }
-        }
-
-        stage('Deploy to Kubernetes') {
-            steps {
-                script {
-                    sh "kubectl apply -f deployment.yml"
                 }
             }
         }
